@@ -3,16 +3,19 @@ document.getElementById("ActionButton").addEventListener("click", function_1);
 //Function 1
 function function_1() {
   var input = document.getElementById("InputText").value;
-  console.log(input);
 
-  //Function 2
-  var function_2 = (function (string) {
-    return string.split("a").length - 1;
-  })(input);
+  if (input.length > 0 && isNaN(input)) {
+    console.log(input);
 
-  console.log(function_2);
+    //Function 2
+    (function (string) {
+      console.log(string.split("a").length - 1);
+    })(input);
 
-  console.log(function_3(input));
+    console.log(function_3(input));
+  } else {
+    console.log("Please fill the input with a text");
+  }
 }
 
 //Function 3
